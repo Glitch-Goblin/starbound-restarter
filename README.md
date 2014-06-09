@@ -22,6 +22,6 @@ To be given when there are some actual working scripts involved. ;)
 I don't expect to get a lot of community help on this here repository; this is just kind of a hobby thing for me. I am, however, a completely amateur programmer, so a few of the other repositories out there have definitely given me inspiration as to which direction I'm going to take this one:
 
 - [Omniworld's Starbound_Beta_Linux_Server_Scripts](https://github.com/Omniworld/Starbound_Beta_Linux_Server_Scripts)
-- [dkeberg's starbound-libs](https://github.com/dkesberg/starbound-libs)
+- [dkesberg's starbound-libs](https://github.com/dkesberg/starbound-libs)
 - [seriallos's commandstar](https://github.com/seriallos/commandstar)
 
