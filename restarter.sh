@@ -1,24 +1,41 @@
 #!/bin/sh
 #
 # The intention of this script is to initiate a loop that will check for Starbound's server status. 
-# If Starbound is found to be not online, then it will start Starbound.
+# If Starbound's server is found to be not running, then it will start Starbound.
 #
+# 
+#
+# specify your starbound server folder here, starting from /home/username, etc, if necessary
+$starbound_dir="/path/to/starbound/linux64or32"
 
-$starbound_dir="/path/to/starbound/linux64or32" # specify your starbound server folder here, starting from /home/username, etc, if necessary
-$starbound_file="starbound_server" # may be called something else in your install
+# the file may be called something else in your install. make sure there are no similarly named extra scripts running or this will not work. 
+#ie if a match can be obtained on more than one running process using this name, it will not recognize when the main server goes down.
+$starbound_file="starbound_server"
 
+
+#the function that will do the leg work when Starbound is found to not be running....
+starter () {
+  echo "starbound-restarter is restarting Starbound...."
+  cd $starbound_dir
+  bash $starbound_file
+  return
+}
+
+#the core loop of the restarter that checks for downages every 30 secs...
 while true
 do
 
-$starb_status= #insert way to determine starbound status here xD
+ps -ag|grep --max-count=1 $starbound_file
 
-$starb_status==1 then 
+if [ $? -eq 1 ]
+then starter
+else echo "Starbound server looks okay.... "
+fi
 
-sleep 15
+echo "starbound-restarter heart beat...."
+
+sleep 30
 done
 
 
-starter () {
-  cd $starbound_dir
-  bash $starbound_file
-}
+exit -1
