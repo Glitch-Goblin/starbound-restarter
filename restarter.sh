@@ -25,7 +25,7 @@ starter () {
 while true
 do
 
-ps -ag|grep --max-count=1 $starbound_file
+ps -ag|grep -v "grep"|grep $starbound_file
 
 if [ $? -eq 1 ]
 then starter
