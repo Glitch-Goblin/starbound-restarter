@@ -6,11 +6,11 @@
 # 
 #
 # specify your starbound server folder here, starting from /home/username, etc, if necessary
-$starbound_dir="/path/to/starbound/linux64or32"
+starbound_dir="/path/to/starbound/linux64or32"
 
 # the file may be called something else in your install. make sure there are no similarly named extra scripts running or this will not work. 
 #ie if a match can be obtained on more than one running process using this name, it will not recognize when the main server goes down.
-$starbound_file="starbound_server"
+starbound_file="starbound_server"
 
 
 #the function that will do the leg work when Starbound is found to not be running....
@@ -38,4 +38,4 @@ sleep 30
 done
 
 
-exit -1
+exit 2
