@@ -12,17 +12,11 @@ starbound_dir="/path/to/starbound/linux64or32"
 #ie if a match can be obtained on more than one running process using this name, it will not recognize when the main server goes down.
 starbound_file="starbound_server"
 
-# initializes the background screen to run on
-screen -dmS starbound
-
 #the function that will do the leg work when Starbound is found to not be running....
 restarter () {
   echo "starbound-restarter is restarting Starbound...."
-  screen -x starbound
   cd $starbound_dir
   ./$starbound_file
-  screen -d
-  sleep 15 # because it takes a minute for starbound_server to get off the ground
   return
 }
 
