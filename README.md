@@ -13,6 +13,9 @@ There are already a few Starbound-oriented git repositories out there as of June
 
 Errr... a Linux based Starbound server? There isn't going to be a lot of testing on this, but I'm building it specifically for use on Ubuntu 14.04.
 
+There are two other conditions needed to install / run this:
+* You must have github installed on your server to make use of the clone command (duh)
+* You can't have any other scripts running at the same time as this one that would produce a regex match similar to your Starbound server's executable file name. For example, if your server executable is called "starbound_server" (as most likely it is to be), then you cannot run any additional scripts that would fit the search `*starbound_server*` or this script will not work. Specifically, it will not be able to sense that the server has gone down, and will not attempt to initiate a reboot.
 ## Instructions
 
 ### Install
