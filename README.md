@@ -15,7 +15,25 @@ Errr... a Linux based Starbound server? There isn't going to be a lot of testing
 
 ## Instructions
 
-To be given when there are some actual working scripts involved. ;)
+### Install
+
+In terminal, cd to the directory where you want to drop starbound-restarter's folder.
+Type: `git clone https://github.com/atomfenrir/starbound-restarter.git`
+In the starbound-restarter folder, open for editing the "restarter.sh" file.
+In the top section of the script, there are some variables pointing to your Starbound server's folder that you will need to fill in.
+Save and exit. Change the permissions of the script so that it will be executable by typing: `chmod 744 restarter.sh`
+
+### Run restarter.sh
+
+When you are ready to run (your Starbound server can already be running or not, it doesn't matter), start a new *screen* session by typing `screen -S restarter`. "restarter" here can be anything, whatever nickname you want to give the session. Go to your restarter directory, e.g., `cd starbound-restarter`. Then type `./restarter.sh`. You should start to see your Starbound server's boot sequence (assuming it wasn't already running on another screen, in which case you'll see restarter.sh heart beats.) 
+
+To leave the screen running, hit CTRL+A then CTRL+D in short succession. You'll be back to your normal terminal view and restarter.sh will be running in the background. 
+
+To return to the server output screen, type `screen -r restarter` (or whatever you nicknamed the session.) 
+
+To tell the Starbound server to do a graceful shutdown and kill the restarter script, hit CTRL+C while in the output screen.
+You can then leave the screen as before.
+
 
 ## Credit given where credit due
 
@@ -24,4 +42,3 @@ I don't expect to get a lot of community help on this here repository; this is j
 - [Omniworld's Starbound_Beta_Linux_Server_Scripts](https://github.com/Omniworld/Starbound_Beta_Linux_Server_Scripts)
 - [dkesberg's starbound-libs](https://github.com/dkesberg/starbound-libs)
 - [seriallos's commandstar](https://github.com/seriallos/commandstar)
-
