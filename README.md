@@ -16,15 +16,20 @@ Errr... a Linux based Starbound server? There isn't going to be a lot of testing
 There are two other conditions needed to install / run this:
 * You must have github installed on your server to make use of the clone command (duh)
 * You can't have any other scripts running at the same time as this one that would produce a regex match similar to your Starbound server's executable file name. For example, if your server executable is called "starbound_server" (as most likely it is to be), then you cannot run any additional scripts that would fit the search `*starbound_server*` or this script will not work. Specifically, it will not be able to sense that the server has gone down, and will not attempt to initiate a reboot.
+
 ## Instructions
 
 ### Install
 
 In terminal, cd to the directory where you want to drop starbound-restarter's folder.
+
 Type: `git clone https://github.com/atomfenrir/starbound-restarter.git`
+
 In the starbound-restarter folder, open for editing the "restarter.sh" file.
 In the top section of the script, there are some variables pointing to your Starbound server's folder that you will need to fill in.
-Save and exit. Change the permissions of the script so that it will be executable by typing: `chmod 744 restarter.sh`
+Save and exit. 
+
+Change the permissions of the script so that it will be executable by typing: `chmod 744 restarter.sh`
 
 ### Run restarter.sh
 
